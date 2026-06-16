@@ -76,6 +76,7 @@ export const useCompilerStore = create<CompilerState>((set, get) => ({
   isExplaining: false,
   
   isPlaying: false,
+  setIsPlaying: (playing) => set({ isPlaying: playing }),
   playbackSpeed: 1,
 
   togglePlay: () => set((state) => ({ isPlaying: !state.isPlaying })),

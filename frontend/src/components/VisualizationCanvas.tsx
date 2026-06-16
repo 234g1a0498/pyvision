@@ -95,7 +95,7 @@ export default function VisualizationCanvas() {
 
     newNodes.forEach((node) => {
       const width = node.type === 'frameNode' ? 250 : 200;
-      const height = node.type === 'frameNode' ? Math.max(100, node.data.locals.length * 30) : 100;
+      const height = node.type === 'frameNode' ? Math.max(100, (node.data as any).locals.length * 30) : 100;
       g.setNode(node.id, { width, height });
     });
 
