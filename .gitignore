@@ -1,0 +1,31 @@
+# Node/Next.js
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+out/
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+backend/venv/
+backend/env/
+
+# Environment Variables
+.env
+backend/.env
+frontend/.env
+
+# IDEs and OS
+.DS_Store
+.vscode/
+.idea/
