@@ -31,7 +31,7 @@ export default function VisualizationCanvas() {
         id: `frame-${idx}`,
         type: 'frameNode',
         position: { x: 50, y: 50 + idx * 200 },
-        data: frame,
+        data: frame as any,
       });
 
           frame.locals.forEach((loc) => {
@@ -55,7 +55,7 @@ export default function VisualizationCanvas() {
         id: `heap-${obj.id}`,
         type: 'heapNode',
         position: { x: 450, y: heapY },
-        data: obj,
+        data: obj as any,
       });
       heapY += 150;
 
