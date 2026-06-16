@@ -85,7 +85,8 @@ export const useCompilerStore = create<CompilerState>((set, get) => ({
   executeCode: async () => {
     set({ isExecuting: true, traceResult: null, currentStepIndex: 0, explanations: {}, isPlaying: false });
     try {
-      const response = await fetch('http://localhost:8000/execute', {
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${baseUrl}/execute`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +113,8 @@ export const useCompilerStore = create<CompilerState>((set, get) => ({
     set({ isExplaining: true });
     try {
       const stepData = traceResult.steps[currentStepIndex];
-      const response = await fetch('http://localhost:8000/explain', {
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${baseUrl}/explain`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code, step_data: stepData }),
